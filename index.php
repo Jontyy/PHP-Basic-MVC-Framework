@@ -1,7 +1,23 @@
 <?php
-	echo '<pre>'.print_r('MVC Subdomain',1).'</pre>';	
+	/**
+	 * PHP Basic MVC Framework Part 4 - Loading Models
+	 * By John White (@Jontyy)
+	 */
 
-	/* Just adding a bit more stuff to test git out*/
+	define('SITE_PATH',realpath(dirname(__FILE__)).'/');
 
-	/*Just a bit more*/
+	/*Require necessary files.*/
+	require_once(SITE_PATH.'application/request.php');
+	require_once(SITE_PATH.'application/router.php');
+	require_once(SITE_PATH.'application/baseController.php');
+	require_once(SITE_PATH.'application/baseModel.php');
+	require_once(SITE_PATH.'application/load.php');
+	require_once(SITE_PATH.'application/registry.php');
+	require_once(SITE_PATH.'controllers/indexController.php');
+
+	
+	$controller = new indexController;	
+	call_user_func(array($controller,'index'));
+
 ?>
+
