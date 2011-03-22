@@ -1,6 +1,6 @@
 <?php
 	/**
-	 * PHP Basic MVC Framework Part 4 - Loading Models
+	 * PHP Basic MVC Framework Part 5 - Loading Views
 	 * By John White (@Jontyy)
 	 */
 
