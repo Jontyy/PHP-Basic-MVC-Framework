@@ -1,6 +1,6 @@
 <?php
 	/**
-	 * PHP Basic MVC Framework Part 5 - Loading Views
+	 * PHP Basic MVC Framework Part 6 - Request
 	 * By John White (@Jontyy)
 	 */
 
@@ -15,9 +15,7 @@
 	require_once(SITE_PATH.'application/registry.php');
 	require_once(SITE_PATH.'controllers/indexController.php');
 
+	$request = new Request;	
+
+	echo '<pre>'.print_r($request,1).'</pre>';	
 	
-	$controller = new indexController;	
-	call_user_func(array($controller,'index'));
-
-?>
-
