@@ -1,6 +1,6 @@
 <?php
 	/**
-	 * PHP Basic MVC Framework Part 6 - Request
+	 * PHP Basic MVC Framework Part 7 - Router
 	 * By John White (@Jontyy)
 	 */
 
@@ -13,9 +13,11 @@
 	require_once(SITE_PATH.'application/baseModel.php');
 	require_once(SITE_PATH.'application/load.php');
 	require_once(SITE_PATH.'application/registry.php');
-	require_once(SITE_PATH.'controllers/indexController.php');
+	require_once(SITE_PATH.'controllers/errorController.php');
 
-	$request = new Request;	
-
-	echo '<pre>'.print_r($request,1).'</pre>';	
-	
+	try{
+		Router::route(new Request);
+	}catch(Exception $e){
+		$controller = new errorController;
+		$controller->error($e->getMessage());
+	}
