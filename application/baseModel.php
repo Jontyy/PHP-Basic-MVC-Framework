@@ -1,5 +1,6 @@
 <?php
-	abstract class baseModel{
 
-	}
-?>
+abstract class baseModel
+{
+	//
+}

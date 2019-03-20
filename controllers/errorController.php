@@ -1,11 +1,15 @@
 <?php
 
-class errorController extends baseController{
+class errorController extends baseController
+{
 	
-	public function index(){}
+	public function index()
+	{
+		//
+	}
 	
-		public function error($message = 'No information about the error'){
-			echo '<pre>'.print_r($message,1).'</pre>';	
-			
-		}
+	public function error($message = 'No information about the error')
+	{
+		echo '<pre>'.print_r($message,1).'</pre>';		
+	}
 }
