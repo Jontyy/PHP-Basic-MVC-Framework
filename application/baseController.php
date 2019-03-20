@@ -1,21 +1,25 @@
 <?php
-	abstract class baseController{
+
+abstract class baseController
+{
 		
-		protected $_registry;
+	protected $_registry;
 
-		protected $load;
+	protected $load;
 
-		public function __construct(){
-			$this->_registry = Registry::getInstance();
-			$this->load = new Load;
-		}
-		abstract public function index();
-
-		final public function __get($key){
-			if($return = $this->_registry->$key){
-				return $return;
-			}
-			return false;
-		}	
+	public function __construct()
+	{
+		$this->_registry = Registry::getInstance();
+		$this->load = new Load;
 	}
-?>
+
+	abstract public function index();
+
+	final public function __get($key)
+	{
+		if ($return = $this->_registry->$key) {
+			return $return;
+		}
+		return false;
+	}	
+}
